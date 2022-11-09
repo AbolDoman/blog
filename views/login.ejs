@@ -1,0 +1,30 @@
+<main class="form-signin w-100 m-auto text-center">
+    <%- include("./includes/success.ejs") %>
+        <%- include("./includes/loginErrors.ejs") %>
+            <form action="/users/login" method="POST">
+                <h1 class="h3 mb-3 fw-normal">وارد شوید</h1>
+
+                <div class="form-floating mb-3">
+                    <label for="floatingInput">آدرس ایمیل</label>
+                    <input name="email" type="email" class="form-control" id="floatingInput">
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="floatingPassword">رمز عبور</label>
+                    <input name="password" type="password" class="form-control" id="floatingPassword">
+                </div>
+
+                <div class="form-floating mb-3">
+                    <label for="remember">مرا به خاطر  بسپار</label>
+                    <input name="remember" class="mr-2" type="checkbox" id="remember">
+                </div>
+
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LeszN8iAAAAAGzj051jsft_cxSDPrHado-WMeih"></div>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">ورود</button>
+
+                <a href="/users/register">اکانت کاربری ندارم</a>
+                <a href="/users/forgetPassword">فراموشی رمز عبور</a>
+            </form>
+</main>

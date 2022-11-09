@@ -1,0 +1,54 @@
+<h3 class="mt-2 text-center">ویرایش پست</h3>
+<%- include("../includes/errors.ejs") %>
+    <div class="d-flex align-items-center justify-content-center">
+        <form enctype="multipart/form-data" action="/dashboard/edit-post/<%= post._id %>" class="w-50" method="POST">
+            <div class="form-group">
+                <label for="title">عنوان پست</label>
+                <input type="text" value="<%=post.title %>" class="form-control w-50" name="title" id="title" />
+            </div>
+
+
+            <label for="selectedThumbnail">عکس بند انگشتی</label>
+            <div class="input-group mb-3">
+                <input type="file" class="custom-file-input" name="thumbnail" id="selectedThumbnail" aria-describedby="inputGroupFileAddon03" />
+                <label id="thumbStatus" class="custom-file-label" for="inputGroupFile03">عکس مورد نظر را انتخاب کنید</label>
+            </div>
+
+            <div class="form-group">
+                <label for="status">وضعیت</label>
+                <select name="status" class="form-control w-25" id="status">
+                <option value="public" <% if(post.status==="public"){ %> selected<% } %> >عمومی</option>
+                <option value="private" <% if(post.status==="private"){ %> selected<% } %>>خصوصی</option>
+            </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" id="uploadImage">
+                        آپلود عکس
+                    </button>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="selectedImage" />
+                    <label for="selectedImage" class="custom-file-label" id="imageStatus">
+                        عکس مورد نظر را انتخاب کنید
+                    </label>
+                </div>
+            </div>
+            <div id="progressDiv" style="display: none;" class="mb-3">
+                <div class="progress">
+                    <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h5>متن اصلی پست</h5>
+                <textarea name="text" class="form-control" id="text"><%=post.text %></textarea>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="ویرایش پست" class="btn btn-success m-2" />
+                <a href="/dashboard" class="btn btn-warning m-2">انصراف</a>
+            </div>
+        </form>
+    </div>

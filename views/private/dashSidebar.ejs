@@ -1,0 +1,16 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-secondary d-flex align-items-center <% if(path==='/dashboard') {%>active<% } %>" aria-current="page" href="/dashboard">
+                    <span class="fa fa-home mr-2"></span>داشبورد
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-secondary d-flex align-items-center <% if(path==='/dashboard/add-post') {%>active<% } %>" href="/dashboard/add-post">
+                    <span class="fa fa-plus mr-2"></span>ساخت پست جدید
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

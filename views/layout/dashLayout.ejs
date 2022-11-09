@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=pageTitle  %>
+    </title>
+    <link rel="stylesheet" href="/../bootstrap/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="/../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/../fontStyles.css">
+    <link rel="shortcut icon" href="/../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/../styles.css">
+    <link rel="stylesheet" href="/../dashboard.css">
+</head>
+
+<body class="rtl">
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">سلام <%= fullName  %> </a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="جستجو" aria-label="جستجو">
+        <div class="navbar-nav">
+            <div class="nav-item text-nowrap">
+                <a class="nav-link px-3" href="/users/logout">خروج</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <%- include("../private/dashSidebar.ejs")  %>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <%- body  %>
+                </main>
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+        <% if(path==="/dashboard/add-post" || path==="/dashboard/edit-post"){ %>
+
+            <script src="/upload.js"></script>
+            <% } %>
+                <script src="/bootstrap/js/jquery.slim.min.js"></script>
+                <script src="/bootstrap/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.15.1/ckeditor.js"></script>
+                <script>
+                    CKEDITOR.replace("text", {
+                        language: "fa"
+                    })
+                </script>
+</body>
+
+
+</html>

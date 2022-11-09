@@ -1,0 +1,29 @@
+<main class="form-signin w-100 m-auto text-center">
+    <%- include("./includes/errors.ejs")  %>
+        <form action="/users/register" method="POST">
+            <h1 class="h3 mb-5 fw-normal">ثبت نام</h1>
+
+            <div class="form-floating mb-3">
+                <label for="fullNameInput">نام کامل</label>
+                <input name="fullName" type="text" class="form-control" id="fullNameInput">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="emailInput">آدرس ایمیل</label>
+                <input name="email" type="email" class="form-control" id="emailInput">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="password">رمز عبور</label>
+                <input name="password" type="password" class="form-control" id="password">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="confirmPassword">تکرار رمز عبور</label>
+                <input name="confirmPassword" type="password" class="form-control" id="confirmPassword">
+            </div>
+            <a href="./login">اکانت کاربری دارم</a>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">ورود</button>
+
+        </form>
+</main>

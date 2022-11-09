@@ -1,0 +1,46 @@
+<nav aria-label="Page navigation example" class="mt-5 d-flex align-items-center justify-content-center">
+    <ul class="pagination">
+        <% if(hasPreviousPage){ %>
+            <li class="page-item"><a class="page-link" href="?page=<%= previosPage %>">قبلی</a></li>
+            <% } %>
+                <% if(currentPage!==1 && currentPage!==2 && numberOfPosts>0){ %>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1">
+                        1
+                    </a>
+                    </li>
+                    <% } %>
+                        <% if(hasPreviousPage){ %>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<%= previosPage %>">
+                                    <%= previosPage %>
+                                </a>
+                            </li>
+                            <% } %>
+                                <li class="page-item active">
+                                    <a class="page-link" href="?page=<%= currentPage %>">
+                                        <%= currentPage %>
+                                    </a>
+                                </li>
+                                <% if(hasNextPage){ %>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=<%= nextPage %>">
+                                            <%= nextPage %>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                                        <% if(currentPage!==lastPage && currentPage+1!==lastPage ){ %>
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page=<%= lastPage %>">
+                                                    <%= lastPage %>
+                                                </a>
+                                            </li>
+                                            <% } %>
+
+                                                <% if(hasNextPage){ %>
+                                                    <li class="page-item"><a class="page-link" href="?page=<%= nextPage %>">بعدی</a></li>
+                                                    <% } %>
+
+
+    </ul>
+</nav>
